@@ -55,7 +55,7 @@ function intialize() {
                 keyTile.id = "Backspace";
             }
             else if ("A" <= key && key <= "Z") {
-                keyTile.id = "Key" + key; // "Key" + "A";
+                keyTile.id = "Key" + key;
             } 
 
             keyTile.addEventListener("click", processKey);
@@ -120,7 +120,7 @@ function update() {
         guess += letter;
     }
 
-    guess = guess.toLowerCase(); //case sensitive
+    guess = guess.toLowerCase();
     console.log(guess);
 
     if (!guessList.includes(guess)) {
@@ -130,7 +130,7 @@ function update() {
     
     let correct = 0;
 
-    let letterCount = {}; //keep track of letter frequency, ex) KENNY -> {K:1, E:1, N:2, Y: 1}
+    let letterCount = {};
     for (let i = 0; i < word.length; i++) {
         let letter = word[i];
 
@@ -156,7 +156,7 @@ function update() {
             keyTile.classList.add("correct");
 
             correct += 1;
-            letterCount[letter] -= 1; //deduct the letter count
+            letterCount[letter] -= 1;
         }
 
         if (correct == width) {
